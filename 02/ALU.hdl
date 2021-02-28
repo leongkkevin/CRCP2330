@@ -55,7 +55,7 @@ CHIP ALU {
     Mux16(a=YZero, b=notYZero, sel=ny, out=yOn)
 
     //Add X and Y
-    
+    Add16(a=xOn, b=yOn, out=xyAdd);
 
     
 }
