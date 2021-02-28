@@ -57,5 +57,10 @@ CHIP ALU {
     //Add X and Y
     Add16(a=xOn, b=yOn, out=xyAdd);
 
+    //And X and Y
+    And16(a=xOn, b=yOn, out=xyAnd);
+
+    
+
     
 }
