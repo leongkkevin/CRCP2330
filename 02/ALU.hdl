@@ -60,7 +60,6 @@ CHIP ALU {
     //And X and Y
     And16(a=xOn, b=yOn, out=xyAnd);
 
-    
-
-    
+    //Choosing And and Add
+    Mux16(a=xyAnd, b=xyAdd, sel=f, out=xyOp);
 }
