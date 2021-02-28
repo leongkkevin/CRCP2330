@@ -62,4 +62,8 @@ CHIP ALU {
 
     //Choosing And and Add
     Mux16(a=xyAnd, b=xyAdd, sel=f, out=xyOp);
+
+    //Not the Op
+    Not16(in=xyOp, out=notXYOp);
+    
 }
