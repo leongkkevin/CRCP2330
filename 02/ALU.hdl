@@ -65,5 +65,7 @@ CHIP ALU {
 
     //Not the Op
     Not16(in=xyOp, out=notXYOp);
-    
+    Mux16(a=xyOp, b=notXYOp, sel=no, out=out);
+
+
 }
