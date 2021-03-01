@@ -74,5 +74,4 @@ CHIP ALU {
     Or8Way(in=firstOut, out=firstZero);
     Or8Way(in=secondOut, out=secondZero);
     Or(a=firstZero, b=secondZero, out=zr);
-
 }
