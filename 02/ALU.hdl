@@ -45,12 +45,12 @@ CHIP ALU {
    // Put you code here:
 
     //X Input
-    Mux16(a=x, b[0..15]=false, sel=zx, out=xZero);
+    Mux16(a=x, b=false, sel=zx, out=xZero);
     Not16(in=xZero, out=notXZero);
     Mux16(a=xZero, b=notXZero, sel=nx, out=xOn);
 
     //Y Input
-    Mux16(a=y, b[0..15]=false, sel=zy, out=yZero);
+    Mux16(a=y, b=false, sel=zy, out=yZero);
     Not16(in=yZero, out=notYZero);
     Mux16(a=yZero, b=notYZero, sel=ny, out=yOn);
 
@@ -65,5 +65,12 @@ CHIP ALU {
 
     //Not the Op
     Not16(in=xyOp, out=notXYOp);
-    Mux16(a=xyOp, b=notXYOp, sel=no, out=out);
+    Mux16(a=xyOp, b=notXYOp, sel=no, out=out, out[15]=outNeg);
+
+    //Output is Ng
+    And(a=outNeg, b=true, out=ng);
+
+    //Output is Zr
+    
+
 }
