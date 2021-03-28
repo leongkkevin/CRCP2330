@@ -12,3 +12,12 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 // Put your code here.
+
+(INITIALIZE)
+    @SCREEN
+    D=A
+
+    @pixel
+    M=D
+
+    
