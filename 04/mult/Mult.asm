@@ -10,3 +10,20 @@
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
 // Put your code here.
+
+@R2
+M=0 //Initialize R2 to 0
+
+(LOOP)
+
+//Set R2, Add R1 to it, Load it back to R2
+    @R2
+    D=M
+
+    @R1
+    D=D+M
+
+    @R2
+    M=D
+
+    
