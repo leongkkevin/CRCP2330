@@ -43,3 +43,6 @@
 
     @KEY
     D=A-D
+
+    @LOOP
+    0;JMP
