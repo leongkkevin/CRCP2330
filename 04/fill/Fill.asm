@@ -23,6 +23,11 @@
 (LOOP)
     @KEY
     D=M
+    
+    @WHITE
+    D;JEQ
+    @BLACK
+    0;JMP
 
 (OFF)
 (ON)
