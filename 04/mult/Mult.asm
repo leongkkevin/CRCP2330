@@ -35,6 +35,7 @@ M=0 //Initialize R2 to 0
     @LOOP
     D;JGT
 
+//Stop the loop
 (END)
     @END
     0;JMP
