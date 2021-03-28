@@ -20,4 +20,9 @@
     @pixel
     M=D
 
-    
+(LOOP)
+    @KEY
+    D=M
+
+(OFF)
+(ON)
