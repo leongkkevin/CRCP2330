@@ -44,5 +44,8 @@
     @KEY
     D=A-D
 
+    @INIT
+    D;JEQ
+
     @LOOP
     0;JMP
