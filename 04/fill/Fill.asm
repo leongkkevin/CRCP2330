@@ -24,11 +24,12 @@
     @KEY
     D=M
     
-    @WHITE
+    @OFF
     D;JEQ
-    @BLACK
+    @ON
     0;JMP
 
 (OFF)
+
 (ON)
 (DRAW)
