@@ -24,9 +24,9 @@
     @KEY
     D=M
     
-    @OFF
-    D;JEQ
     @ON
+    D;JEQ
+    @OFF
     0;JMP
 
 (OFF)
