@@ -13,7 +13,7 @@
 
 // Put your code here.
 
-(INITIALIZE)
+(INIT)
     @SCREEN
     D=A
 
@@ -41,4 +41,5 @@
     D=M+1
     M=D
 
-    
+    @KEY
+    D=A-D
