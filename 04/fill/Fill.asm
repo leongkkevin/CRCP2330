@@ -37,7 +37,7 @@
 
 (ON)
     @pixel
-    M=1
+    M=-1
     @DRAW
     0;JMP
     
