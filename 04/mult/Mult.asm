@@ -26,4 +26,15 @@ M=0 //Initialize R2 to 0
     @R2
     M=D
 
-    
+//Reduce counter (R1)
+    @R0
+    D=M-1
+    M=D
+
+//Loop if GT
+    @LOOP
+    D;JGT
+
+(END)
+    @END
+    0;JMP
