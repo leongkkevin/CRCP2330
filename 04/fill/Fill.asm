@@ -36,6 +36,11 @@
     0;JMP
 
 (ON)
+    @pixel
+    M=1
+    @DRAW
+    0;JMP
+    
 (DRAW)
     @pixel
     D=M+1
