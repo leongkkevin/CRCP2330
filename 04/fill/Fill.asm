@@ -27,9 +27,9 @@
     @KBD
     D=M
     
-    @ON
-    D;JEQ
     @OFF
+    D;JEQ
+    @ON
     0;JMP
 
 (ON)
