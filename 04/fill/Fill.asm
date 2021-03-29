@@ -29,15 +29,17 @@
     @OFF
     0;JMP
 
-(OFF)
+(ON)
+    @SCREEN
+    A=A+D
     @pixel
-    M=0
+    M=-1
     @DRAW
     0;JMP
 
-(ON)
+(OFF)
     @pixel
-    M=-1
+    M=0
     @DRAW
     0;JMP
     
