@@ -64,8 +64,8 @@
     M=M+1
     A=M
 
-    @INIT
-    D;JEQ
+    @DRAW
+    D;JGT
 
-    @LOOP
+    @INIT
     0;JMP
