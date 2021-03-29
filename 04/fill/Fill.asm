@@ -21,7 +21,10 @@
     M=D
 
 (LOOP)
-    @KEY
+    @curr
+    M=0
+
+    @KBD
     D=M
     
     @ON
@@ -30,8 +33,6 @@
     0;JMP
 
 (ON)
-    @SCREEN
-    A=A+D
     @pixel
     M=-1
     @DRAW
@@ -48,7 +49,7 @@
     D=M+1
     M=D
 
-    @KEY
+    @KBD
     D=A-D
 
     @INIT
