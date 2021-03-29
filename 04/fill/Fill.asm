@@ -20,6 +20,9 @@
     @pixel
     M=D
 
+    @pixelValue
+    M=0
+
 (LOOP) 
 
     @KBD        //Check Keyboard input
@@ -27,7 +30,7 @@
     
     @ON         //Jump to either on or off
     D;JGT
-    @ON
+    @OFF
     D;JEQ
 
     @LOOP
