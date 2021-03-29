@@ -13,44 +13,56 @@
 
 // Put your code here.
 
-(INIT)
+(INIT)          //Starts the variables
     @SCREEN
     D=A
 
     @pixel
     M=D
 
-(LOOP)
-    @curr
-    M=0
+(LOOP) 
 
-    @KBD
+    @KBD        //Check Keyboard input
     D=M
     
-    @OFF
-    D;JEQ
+    @ON         //Jump to either on or off
+    D;JGT
     @ON
+    D;JEQ
+
+    @LOOP
     0;JMP
 
-(ON)
-    @pixel
+(ON)            //Sets pixelVal to Black
+    @pixelValue
     M=-1
     @DRAW
     0;JMP
 
-(OFF)
-    @pixel
+(OFF)           //Sets pixelVal to White
+    @pixelValue
     M=0
     @DRAW
     0;JMP
     
-(DRAW)
-    @pixel
-    D=M+1
+(DRAW)          //Draws the Pixel
+    @pixelValue //Checks value
+    D=M
+
+    @pixel      //Drawing it
+    A=M
     M=D
+
+    @pixel      //Incrementing pixel
+    D=M+1
+    A=M
 
     @KBD
     D=A-D
+
+    @pixel      //If A=0, the whole screen is a color, so restart
+    M=M+1
+    A=M
 
     @INIT
     D;JEQ
