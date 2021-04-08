@@ -29,4 +29,5 @@ CHIP Memory {
     PARTS:
     // Put your code here:
     DMux4Way(in=load, sel=address[13..14], a=ram1, b=ram2, c=screen, d=keyboard);
+    Or(a=ram1, b=ram2, out=outRam);
 }
