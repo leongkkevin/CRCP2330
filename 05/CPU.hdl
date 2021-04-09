@@ -55,6 +55,6 @@ CHIP CPU {
     Nand(a=instruction[15], b=true, out=aInstruction);
     Not(in=aInstruction, out=cInstruction);
 
-    //C-Instruction
-    
+    //C-Instruction (if true)
+    And(a=instruction[12], b=true, out=selectM);
 }
