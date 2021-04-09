@@ -43,4 +43,7 @@ CHIP CPU {
     
     //Which instruction
     Mux16(a=instruction, b=outALU, sel=instruction[15], out=aInfo);
+    ARegister(in=aInfo, load=aLoad, out=aReg, out[0..14]=addressM;
+
+    
 }
