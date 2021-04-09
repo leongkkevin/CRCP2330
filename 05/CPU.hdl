@@ -57,4 +57,9 @@ CHIP CPU {
 
     //C-Instruction (if true)
     And(a=instruction[12], b=true, out=selectM);
+
+    //Write to ALU
+    And(a=instruction[5], b=true, out=aWrite);
+    Or(a=aWrite, b=aInstruction, out=aLoad);
+    
 }
