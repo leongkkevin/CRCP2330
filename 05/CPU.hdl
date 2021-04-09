@@ -42,6 +42,5 @@ CHIP CPU {
     // Put your code here:
     
     //Which instruction
-    Not(in=instruction[15], out=aInstruction);
-    Not(in=aInstruction, out=cInstruction);
+    Mux16(a=instruction, b=outALU, sel=instruction[15], out=aInfo);
 }
