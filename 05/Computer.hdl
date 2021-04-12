@@ -20,4 +20,6 @@ CHIP Computer {
 
     PARTS:
     // Put your code here:
+    ROM32K(address=pc, out=instruction);
+    
 }

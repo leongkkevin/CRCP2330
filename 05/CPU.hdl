@@ -63,6 +63,4 @@ CHIP CPU {
     Or(a=aWrite, b=aInstruction, out=aLoad);
 
     And(a=instruction[3], b=instruction[15], out=writeM);
-
-    //Jumping
 }
