@@ -59,12 +59,10 @@ CHIP CPU {
     And(a=cInstruction, b=instruction[4], out=loadD);
     DRegister(in=outALU, load=loadD, out=outD); 
 
-    Mux16(a=instruction, b=outALU, sel=instruction[15], out=aInfo);
-    ARegister(in=aInfo, load=aLoad, out=aOut, out[0..14]=addressM);
-    Mux16(a=aOut, b=inM, sel=selectM, out-AMuxOut);
+    //ALU calculations
+    ALU(x=outD, y=outMA, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=outALU, out=outM, zr=zrALU, ng=ngALU);
 
 
-    ALU(x=outD, y=AMuxOut, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=outALU, out=outM, zr=zrALU, ng=ngALU);
 
     PC(in=aOut, load=jump, inc=true, reset=reset, out[0..14]=pcOut);
 
