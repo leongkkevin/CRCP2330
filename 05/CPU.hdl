@@ -62,13 +62,22 @@ CHIP CPU {
     //ALU calculations
     ALU(x=outD, y=outMA, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=outALU, out=outM, zr=zrALU, ng=ngALU);
 
+     //Write memory via outputs
+    Or16(a=false, b=outA, out[0..14]=addressM);
+    Or16(a=false, b=outALU, out=outM);
+    And(a=cInstruction, b=instruction[3], out=writeM);
 
+    //Calc the PC and A register
+    And(a=zrALU, b=instruction[1], out=jumpEqual);
+    And(a=ngALU, b=instruction[2], out=jumpLess);
+    Or(a=zrALU, b=ngALU, out=negOrZero);
 
-    PC(in=aOut, load=jump, inc=true, reset=reset, out[0..14]=pcOut);
+    Not(in=negOrZero, out=positive);    
+    And(a=positive, b=instruction[0], out=jumpGreater);
+    Or(a=jumpEqual, b=jumpLess, out=jumpLessEqual);
 
-    //Write to ALU
-    And(a=instruction[5], b=true, out=aWrite);
-    Or(a=aWrite, b=aInstruction, out=aLoad);
-
-    And(a=instruction[3], b=instruction[15], out=writeM);
+    Or(a=jumpLessEqual, b=jumpGreater, out=jumpA);    
+    And(a=cInstruction, b=jumpA, out=loadPC);
+    Not(in=loadPC, out=incPC);
+    PC(in=outA, inc=incPC, load=loadPC, reset=reset, out[0..14]=pc);
 }
