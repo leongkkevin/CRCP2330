@@ -45,6 +45,13 @@ CHIP CPU {
     Not(in=instruction[15], out=aInstruction);
     Not(in=aInstruction, out=cInstruction);
 
+    //C instruction into the A register
+    And(a=cInstruction, b=instruction[5], out=toAReg);    
+    Mux16(a=instruction, b=outALU, sel=ALUtoA, out=inAReg);
+    //Loading A reg if A/C-inst and sets the destination to the A-register
+    Or(a=aInstruction, b=ALUtoA, out=loadA);  
+    ARegister(in=inAReg, load=loadA, out=outA);
+
     Mux16(a=instruction, b=outALU, sel=instruction[15], out=aInfo);
     ARegister(in=aInfo, load=aLoad, out=aOut, out[0..14]=addressM);
     Mux16(a=aOut, b=inM, sel=selectM, out-AMuxOut);
