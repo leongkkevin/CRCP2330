@@ -41,6 +41,10 @@ CHIP CPU {
     PARTS:
     // Put your code here:
     
+    //Find A or C Instruction
+    Not(in=instruction[15], out=aInstruction);
+    Not(in=aInstruction, out=cInstruction);
+
     Mux16(a=instruction, b=outALU, sel=instruction[15], out=aInfo);
     ARegister(in=aInfo, load=aLoad, out=aOut, out[0..14]=addressM);
     Mux16(a=aOut, b=inM, sel=selectM, out-AMuxOut);
@@ -50,13 +54,6 @@ CHIP CPU {
     ALU(x=outD, y=AMuxOut, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=outALU, out=outM, zr=zrALU, ng=ngALU);
 
     PC(in=aOut, load=jump, inc=true, reset=reset, out[0..14]=pcOut);
-
-    //A-Instruction
-    Nand(a=instruction[15], b=true, out=aInstruction);
-    Not(in=aInstruction, out=cInstruction);
-
-    //C-Instruction (if true)
-    And(a=instruction[12], b=true, out=selectM);
 
     //Write to ALU
     And(a=instruction[5], b=true, out=aWrite);
