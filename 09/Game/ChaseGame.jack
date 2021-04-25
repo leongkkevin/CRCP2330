@@ -26,35 +26,31 @@ class ChaseGame {
       return;
    }
 
-   method void moveSquare() {
+   method void moveItems() {
       if (direction = 1) { do square.moveUp(); }
       if (direction = 2) { do square.moveDown(); }
       if (direction = 3) { do square.moveLeft(); }
       if (direction = 4) { do square.moveRight(); }
       do Sys.wait(5); 
-      return;
-   }
-
-   method void moveCircle() {
-      if (direction = 1) { do circle.moveUp(); }
-      if (direction = 2) { do circle.moveDown(); }
-      if (direction = 3) { do circle.moveLeft(); }
-      if (direction = 4) { do circle.moveRight(); }
+      if (direction = 5) { do circle.moveUp(); }
+      if (direction = 6) { do circle.moveDown(); }
+      if (direction = 7) { do circle.moveLeft(); }
+      if (direction = 8) { do circle.moveRight(); }
       do Sys.wait(5); 
       return;
    }
 
-   /** Runs the game: handles the user's inputs and moves the square accordingly */
    method void run() {
-      var char key;  // the key currently pressed by the user
+      var char key;
+
       var boolean exit;
       let exit = false;
       
       while (~exit) {
-         // waits for a key to be pressed
+
          while (key = 0) {
             let key = Keyboard.keyPressed();
-            do moveSquare();
+            do moveItems();
          }
          if (key = 81)  { let exit = true; }     // q key
          if (key = 90)  { do square.decSize(); } // z key
@@ -63,13 +59,17 @@ class ChaseGame {
          if (key = 133) { let direction = 2; }   // down arrow
          if (key = 130) { let direction = 3; }   // left arrow
          if (key = 132) { let direction = 4; }   // right arrow
+         
+         if (key = 131) { let direction = 5; }   // up arrow
+         if (key = 133) { let direction = 6; }   // down arrow
+         if (key = 130) { let direction = 7; }   // left arrow
+         if (key = 132) { let direction = 8; }   // right arrow
 
-         // waits for the key to be released
          while (~(key = 0)) {
             let key = Keyboard.keyPressed();
-            do moveSquare();
+            do moveItems();
          }
-     } // while
+     }
      return;
    }
 }
