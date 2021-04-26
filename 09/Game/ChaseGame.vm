@@ -284,46 +284,54 @@ pop temp 0
 label IF_FALSE7
 push constant 0
 return
-function ChaseGame.detection 4
+function ChaseGame.checkX 2
 push argument 0
 pop pointer 0
 push this 0
 call Square.getX 1
-push constant 30
+push constant 15
 add
+push this 1
+call Square.getX 1
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+not
 pop local 0
+goto IF_END0
+label IF_FALSE0
+push constant 0
+pop local 0
+label IF_END0
 push this 0
-call Square.getY 1
+call Square.getX 1
+push constant 15
+add
+push this 1
+call Square.getX 1
 push constant 30
 add
+lt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+not
 pop local 1
-push this 1
-call Square.getX 1
-push constant 30
-add
-pop local 2
-push this 1
-call Square.getY 1
-push constant 30
-add
-pop local 3
-push this 0
-call Square.getX 1
-push constant 15
-add
-push this 1
-call Square.getX 1
-gt
-push this 0
-call Square.getX 1
-push constant 15
-add
-push this 1
-call Square.getX 1
-lt
-push constant 30
-add
+goto IF_END1
+label IF_FALSE1
+push constant 0
+pop local 1
+label IF_END1
+push local 0
+push local 1
 and
+return
+function ChaseGame.checkY 0
+push argument 0
+pop pointer 0
 push this 0
 call Square.getY 1
 push constant 15
@@ -331,6 +339,9 @@ add
 push this 1
 call Square.getY 1
 gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
 push this 0
 call Square.getY 1
 push constant 15
@@ -338,10 +349,27 @@ add
 push this 1
 call Square.getY 1
 lt
-push constant 30
+push constant 15
 add
-and
-and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+not
+return
+label IF_FALSE1
+goto IF_END0
+label IF_FALSE0
+push constant 0
+return
+label IF_END0
+push constant 0
+return
+function ChaseGame.detection 0
+push argument 0
+pop pointer 0
+push pointer 0
+call ChaseGame.checkX 1
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0

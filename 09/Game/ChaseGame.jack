@@ -49,26 +49,53 @@ class ChaseGame {
       return;
    }
 
-   method boolean detection() {
-       var int sqrCrnX;
-       var int sqrCrnY;
-       var int CirCrnX;
-       var int CirCrnY;
-
-       let sqrCrnX = square.getX() + 30;
-       let sqrCrnY = square.getY() + 30;
-       let CirCrnX = circle.getX() + 30;
-       let CirCrnY = circle.getY() + 30;
-
-        // if( (((square.getX() + 15 > circle.getX()) & (square.getX() + 15 < circle.getX() + 30)) & ( (square.getY() + 15 > circle.getY()) & (square.getY() + 15 < circle.getY() + 30)))  ){
-        //     return true;
-        // }
-
-        if((square.getX() = circle.getX()) & (square.getY() = circle.getY())){
-            return true;
+    method boolean checkX(){
+        var boolean c1;
+        var boolean c2;
+    
+        if( (square.getX() + 15) > (circle.getX()) ){
+            let c1 = true;
+        } else {
+            let c1 = false;
         }
+        if( (square.getX() + 15) < (circle.getX() + 30) ){
+            let c2 = true;
+        } else {
+            let c2 = false;
+        }
+
+
+        return c1 & c2;
+            
+    }
+
+    method boolean checkY(){
+        var boolean c1;
+        var boolean c2;
+    
+        if( (square.getY() + 15) > (circle.getY()) ){
+            let c1 = true;
+        } else {
+            let c1 = false;
+        }
+        if( (square.getY() + 15) < (circle.getY() + 30) ){
+            let c2 = true;
+        } else {
+            let c2 = false;
+        }
+
+
+        return c1 & c2;
+    }
+
+   method boolean detection() {
        
-       return false;
+       if( (checkX()) & (checkY()) ){
+        return true;
+       } else {
+        return false;
+       }
+       
     }
        
 
