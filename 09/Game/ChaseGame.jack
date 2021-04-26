@@ -33,6 +33,7 @@ class ChaseGame {
       if (direction = 2) { do square.moveDown(); }
       if (direction = 3) { do square.moveLeft(); }
       if (direction = 4) { do square.moveRight(); }
+      
       if (direction = 5) { do circle.moveUp(); }
       if (direction = 6) { do circle.moveDown(); }
       if (direction = 7) { do circle.moveLeft(); }
@@ -55,15 +56,16 @@ class ChaseGame {
          }
          if (key = 81)  { let exit = true; }     // q key
 
-         if (key = 131) { let direction = 1; }   // up arrow
-         if (key = 133) { let direction = 2; }   // down arrow
-         if (key = 130) { let direction = 3; }   // left arrow
-         if (key = 132) { let direction = 4; }   // right arrow
+         if (key = 131) { let direction = 5; }   // up arrow
+         if (key = 133) { let direction = 6; }   // down arrow
+         if (key = 130) { let direction = 7; }   // left arrow
+         if (key = 132) { let direction = 8; }   // right arrow
          
-         if (key = 87) { let direction = 5; }   // W
-         if (key = 83) { let direction = 6; }   // S
-         if (key = 65) { let direction = 7; }   // A
-         if (key = 68) { let direction = 8; }   // D
+         
+         if (key = 87) { let direction = 1; }   // W
+         if (key = 83) { let direction = 2; }   // S
+         if (key = 65) { let direction = 3; }   // A
+         if (key = 68) { let direction = 4; }   // D
 
          while (~(key = 0)) {
             let key = Keyboard.keyPressed();
