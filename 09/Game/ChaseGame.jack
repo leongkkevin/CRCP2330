@@ -59,10 +59,10 @@ class ChaseGame {
          if (key = 130) { let direction = 3; }   // left arrow
          if (key = 132) { let direction = 4; }   // right arrow
          
-         if (key = 119) { let direction = 5; }   // up arrow
-         if (key = 115) { let direction = 6; }   // down arrow
-         if (key = 97) { let direction = 7; }   // left arrow
-         if (key = 100) { let direction = 8; }   // right arrow
+         if (key = 119) { let direction = 5; }   // W
+         if (key = 115) { let direction = 6; }   // S
+         if (key = 97) { let direction = 7; }   // A
+         if (key = 100) { let direction = 8; }   // D
 
          while (~(key = 0)) {
             let key = Keyboard.keyPressed();
