@@ -163,7 +163,7 @@ if-goto WHILE_END0
 push this 0
 call Square.getX 1
 push this 1
-call Square.getY 1
+call Square.getX 1
 eq
 if-goto IF_TRUE0
 goto IF_FALSE0

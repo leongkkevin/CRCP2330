@@ -6,10 +6,7 @@ class ChaseGame {
 
    field int direction;
 
-    field int it;
-
-   field int squarePts;
-   field int circlePts;
+    field int points;
 
    field int randNum;
 
@@ -22,7 +19,7 @@ class ChaseGame {
 
       let randNum = 0;
 
-      let it = 1;
+      let points = 0;
 
       return this;
    }
@@ -58,7 +55,12 @@ class ChaseGame {
 
           if (square.getX() = circle.getX()){
               if(square.getY() = circle.getY()){
-                  do Output.printString("Hello world!");
+                
+                points = points + 1;
+
+                  do Output.printString("TAGGED!");
+                  do Output.printString("You have " + points + " points!");
+                  do Output.println();
               }
           }
 
