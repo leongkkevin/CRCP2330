@@ -106,7 +106,7 @@ class ChaseGame {
 
          if(points = 10){
             do Output.printString("YOU WIN!");
-            exit = true;
+            let exit = true;
         }
      }
      return;
