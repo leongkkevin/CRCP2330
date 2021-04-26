@@ -14,6 +14,7 @@ class ChaseGame {
    field int randNum;
 
    constructor ChaseGame new() {
+       do Output.printString("Hello world!");
       let square = Square.new(0, 0, 30);
       let circle = Square.new(300, 150, 30);
 
@@ -55,7 +56,7 @@ class ChaseGame {
       
       while (~exit) {
 
-          if (square.getX() = circle.getY()){
+          if (square.getX() = circle.getX()){
               if(square.getY() = circle.getY()){
                   do Output.printString("Hello world!");
               }
