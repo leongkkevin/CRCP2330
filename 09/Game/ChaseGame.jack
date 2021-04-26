@@ -11,11 +11,13 @@ class ChaseGame {
    field int randNum;
 
    constructor ChaseGame new() {
-       do Output.printString("WELCOME TO THE CHASE GAME!");
+       do Output.printString("WELCOME TO THE CHASE GAME! This is you ->");
+       do Output.println();
+       do Output.printString("Tag the other box 10 times to win!");
        do Output.println();
 
-      let square = Square.new(700, 0, 30);
-      let circle = Square.new(300, 150, 30);
+      let square = Square.new(425, 0, 30);
+      let circle = Square.new(50, 200, 30);
 
       let direction = 0;
 
@@ -58,7 +60,11 @@ class ChaseGame {
        let CirCrnX = circle.getX() + 30;
        let CirCrnY = circle.getY() + 30;
 
-        if( ( (square.getX() > circle.getX()) & (square.getX() < CirCrnX)) | ( (square.getY() > circle.getY()) & (square.getY() < CirCrnY)) ){
+        // if( (((square.getX() + 15 > circle.getX()) & (square.getX() + 15 < circle.getX() + 30)) & ( (square.getY() + 15 > circle.getY()) & (square.getY() + 15 < circle.getY() + 30)))  ){
+        //     return true;
+        // }
+
+        if((square.getX() = circle.getX()) & (square.getY() = circle.getY())){
             return true;
         }
        
