@@ -76,12 +76,11 @@ class ChaseGame {
 
           if (detection()){
               let points = points + 1;
-
                   do Output.printString("TAGGED!");
-                  do Output.printString("You have ");
-                  do Output.print(points);
-                  do Output.printString(" points!");
-                  do Output.println();
+                //   do Output.printString("You have ");
+                //   do Output.print(points);
+                //   do Output.printString(" points!");
+                //   do Output.println();
 
           }
 
@@ -104,6 +103,11 @@ class ChaseGame {
             let key = Keyboard.keyPressed();
             do moveItems();
          }
+
+         if(points = 10){
+            do Output.printString("YOU WIN!");
+            exit = true;
+        }
      }
      return;
    }
