@@ -46,9 +46,12 @@ class ChaseGame {
    }
 
    method int detection() {
-       if(square.getX() >= square.getY() && square.getX() <= square.getY()){
-           
-       }
+       var int sqrCrnX;
+       var int sqrCrnY;
+
+       let sqrCrnX = square.getX() + 30;
+       let sqrCrnY = square.getY() + 30;
+       
    }
 
    method void run() {
