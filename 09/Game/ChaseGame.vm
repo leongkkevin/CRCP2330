@@ -1,5 +1,5 @@
 function ChaseGame.new 0
-push constant 7
+push constant 9
 call Memory.alloc 1
 pop pointer 0
 push constant 0
@@ -13,11 +13,13 @@ push constant 30
 call Square.new 3
 pop this 1
 push constant 0
-pop this 4
-push constant 0
-pop this 2
+pop this 5
 push constant 0
 pop this 3
+push constant 0
+pop this 4
+push constant 0
+pop this 8
 push pointer 0
 return
 function ChaseGame.dispose 0
@@ -37,7 +39,7 @@ return
 function ChaseGame.moveItems 0
 push argument 0
 pop pointer 0
-push this 4
+push this 5
 push constant 1
 eq
 if-goto IF_TRUE0
@@ -47,7 +49,7 @@ push this 0
 call Square.moveUp 1
 pop temp 0
 label IF_FALSE0
-push this 4
+push this 5
 push constant 2
 eq
 if-goto IF_TRUE1
@@ -57,7 +59,7 @@ push this 0
 call Square.moveDown 1
 pop temp 0
 label IF_FALSE1
-push this 4
+push this 5
 push constant 3
 eq
 if-goto IF_TRUE2
@@ -67,7 +69,7 @@ push this 0
 call Square.moveLeft 1
 pop temp 0
 label IF_FALSE2
-push this 4
+push this 5
 push constant 4
 eq
 if-goto IF_TRUE3
@@ -77,7 +79,7 @@ push this 0
 call Square.moveRight 1
 pop temp 0
 label IF_FALSE3
-push this 4
+push this 5
 push constant 5
 eq
 if-goto IF_TRUE4
@@ -87,7 +89,7 @@ push this 1
 call Square.moveUp 1
 pop temp 0
 label IF_FALSE4
-push this 4
+push this 5
 push constant 6
 eq
 if-goto IF_TRUE5
@@ -97,7 +99,7 @@ push this 1
 call Square.moveDown 1
 pop temp 0
 label IF_FALSE5
-push this 4
+push this 5
 push constant 7
 eq
 if-goto IF_TRUE6
@@ -107,7 +109,7 @@ push this 1
 call Square.moveLeft 1
 pop temp 0
 label IF_FALSE6
-push this 4
+push this 5
 push constant 8
 eq
 if-goto IF_TRUE7
@@ -132,6 +134,8 @@ push local 1
 not
 not
 if-goto WHILE_END0
+push constant 0
+pop this 8
 label WHILE_EXP1
 push local 0
 push constant 0
@@ -161,8 +165,8 @@ eq
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
-push constant 1
-pop this 4
+push constant 5
+pop this 5
 label IF_FALSE1
 push local 0
 push constant 133
@@ -170,8 +174,8 @@ eq
 if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
-push constant 2
-pop this 4
+push constant 6
+pop this 5
 label IF_FALSE2
 push local 0
 push constant 130
@@ -179,8 +183,8 @@ eq
 if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
-push constant 3
-pop this 4
+push constant 7
+pop this 5
 label IF_FALSE3
 push local 0
 push constant 132
@@ -188,17 +192,21 @@ eq
 if-goto IF_TRUE4
 goto IF_FALSE4
 label IF_TRUE4
-push constant 4
-pop this 4
+push constant 8
+pop this 5
 label IF_FALSE4
+push this 2
+push constant 3
+call Random.randRange 2
+pop this 8
 push local 0
 push constant 87
 eq
 if-goto IF_TRUE5
 goto IF_FALSE5
 label IF_TRUE5
-push constant 5
-pop this 4
+push constant 1
+pop this 5
 label IF_FALSE5
 push local 0
 push constant 83
@@ -206,8 +214,8 @@ eq
 if-goto IF_TRUE6
 goto IF_FALSE6
 label IF_TRUE6
-push constant 6
-pop this 4
+push constant 2
+pop this 5
 label IF_FALSE6
 push local 0
 push constant 65
@@ -215,8 +223,8 @@ eq
 if-goto IF_TRUE7
 goto IF_FALSE7
 label IF_TRUE7
-push constant 7
-pop this 4
+push constant 3
+pop this 5
 label IF_FALSE7
 push local 0
 push constant 68
@@ -224,8 +232,8 @@ eq
 if-goto IF_TRUE8
 goto IF_FALSE8
 label IF_TRUE8
-push constant 8
-pop this 4
+push constant 4
+pop this 5
 label IF_FALSE8
 label WHILE_EXP2
 push local 0
