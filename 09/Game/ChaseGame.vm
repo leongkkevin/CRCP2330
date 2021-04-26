@@ -199,6 +199,9 @@ push this 2
 push constant 3
 call Random.randRange 2
 pop this 8
+push this 8
+call Output.printString 1
+pop temp 0
 push local 0
 push constant 87
 eq
