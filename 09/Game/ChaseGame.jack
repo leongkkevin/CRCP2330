@@ -33,7 +33,6 @@ class ChaseGame {
       if (direction = 2) { do square.moveDown(); }
       if (direction = 3) { do square.moveLeft(); }
       if (direction = 4) { do square.moveRight(); }
-      do Sys.wait(5); 
       if (direction = 5) { do circle.moveUp(); }
       if (direction = 6) { do circle.moveDown(); }
       if (direction = 7) { do circle.moveLeft(); }

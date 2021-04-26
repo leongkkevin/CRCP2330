@@ -8,7 +8,7 @@ push constant 30
 call Square.new 3
 pop this 0
 push constant 0
-push constant 10
+push constant 100
 push constant 30
 call Square.new 3
 pop this 1
@@ -159,7 +159,7 @@ not
 pop local 1
 label IF_FALSE0
 push local 0
-push constant 1
+push constant 131
 eq
 if-goto IF_TRUE1
 goto IF_FALSE1
@@ -168,7 +168,7 @@ push constant 1
 pop this 4
 label IF_FALSE1
 push local 0
-push constant 2
+push constant 133
 eq
 if-goto IF_TRUE2
 goto IF_FALSE2
@@ -177,7 +177,7 @@ push constant 2
 pop this 4
 label IF_FALSE2
 push local 0
-push constant 3
+push constant 130
 eq
 if-goto IF_TRUE3
 goto IF_FALSE3
@@ -186,7 +186,7 @@ push constant 3
 pop this 4
 label IF_FALSE3
 push local 0
-push constant 4
+push constant 132
 eq
 if-goto IF_TRUE4
 goto IF_FALSE4
@@ -195,7 +195,7 @@ push constant 4
 pop this 4
 label IF_FALSE4
 push local 0
-push constant 131
+push constant 87
 eq
 if-goto IF_TRUE5
 goto IF_FALSE5
@@ -204,7 +204,7 @@ push constant 5
 pop this 4
 label IF_FALSE5
 push local 0
-push constant 133
+push constant 83
 eq
 if-goto IF_TRUE6
 goto IF_FALSE6
@@ -213,7 +213,7 @@ push constant 6
 pop this 4
 label IF_FALSE6
 push local 0
-push constant 130
+push constant 65
 eq
 if-goto IF_TRUE7
 goto IF_FALSE7
@@ -222,7 +222,7 @@ push constant 7
 pop this 4
 label IF_FALSE7
 push local 0
-push constant 132
+push constant 68
 eq
 if-goto IF_TRUE8
 goto IF_FALSE8
