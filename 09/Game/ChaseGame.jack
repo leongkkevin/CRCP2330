@@ -11,8 +11,10 @@ class ChaseGame {
    field int randNum;
 
    constructor ChaseGame new() {
-       do Output.printString("Hello world!");
-      let square = Square.new(0, 0, 30);
+       do Output.printString("WELCOME TO THE CHASE GAME!");
+       do Output.println();
+
+      let square = Square.new(700, 0, 30);
       let circle = Square.new(300, 150, 30);
 
       let direction = 0;
