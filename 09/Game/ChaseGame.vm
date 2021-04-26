@@ -173,26 +173,33 @@ call Square.getY 1
 push constant 30
 add
 pop local 3
-push local 0
+push this 0
+call Square.getX 1
+push this 1
+call Square.getX 1
+gt
+push this 0
+call Square.getX 1
 push local 2
-sub
-push constant 1
 lt
+and
+push this 0
+call Square.getY 1
+push this 1
+call Square.getY 1
+gt
+push this 0
+call Square.getY 1
+push local 3
+lt
+and
+or
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push local 1
-push local 3
-sub
-push constant 1
-lt
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
 push constant 0
 not
 return
-label IF_FALSE1
 label IF_FALSE0
 push constant 0
 return

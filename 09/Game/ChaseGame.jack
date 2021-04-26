@@ -56,7 +56,7 @@ class ChaseGame {
        let CirCrnX = circle.getX() + 30;
        let CirCrnY = circle.getY() + 30;
 
-        if( ((square.getX() >= circle.getX) & (square.getX <= CirCrnX)) || ((square.getY() >= circle.getY) & (square.getY <= CirCrnY)) ){
+        if( ( (square.getX() > circle.getX()) & (square.getX() < CirCrnX)) | ( (square.getY() > circle.getY()) & (square.getY() < CirCrnY)) ){
             return true;
         }
        
