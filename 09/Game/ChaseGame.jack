@@ -63,10 +63,10 @@ class ChaseGame {
          if (key = 130) { let direction = 7; }   // left arrow
          if (key = 132) { let direction = 8; }   // right arrow
          
-         if (randNum = 1) { do circle.moveUp() }   // W
-         if (randNum = 2) { do circle.moveDown()}   // S
-         if (randNum = 3) { do circle.moveLeft()}   // A
-         if (randNum = 4) { do circle.moveRight() }   // D
+         if (randNum = 1) { do circle.moveUp();}   // W
+         if (randNum = 2) { do circle.moveDown();}   // S
+         if (randNum = 3) { do circle.moveLeft();}   // A
+         if (randNum = 4) { do circle.moveRight();}   // D
 
          while (~(key = 0)) {
             let key = Keyboard.keyPressed();
