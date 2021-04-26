@@ -13,7 +13,7 @@ class ChaseGame {
 
    constructor ChaseGame new() {
       let square = Square.new(0, 0, 30);
-      let circle = Square.new(0, 100, 30);
+      let circle = Square.new(0, 150, 30);
 
       let direction = 0;
 
