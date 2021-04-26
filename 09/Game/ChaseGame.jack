@@ -56,10 +56,12 @@ class ChaseGame {
           if (square.getX() = circle.getX()){
               if(square.getY() = circle.getY()){
                 
-                points = points + 1;
+                let points = points + 1;
 
                   do Output.printString("TAGGED!");
-                  do Output.printString("You have " + points + " points!");
+                  do Output.printString("You have ");
+                  do Output.print(points);
+                  do Output.printString(" points!");
                   do Output.println();
               }
           }
