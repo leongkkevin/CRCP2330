@@ -4,8 +4,6 @@ class ChaseGame {
    field Square circle;
    field Random random;
 
-   field int directionSqu;
-   field int directionCir;
    field int direction;
 
    field int squarePts;
@@ -18,8 +16,6 @@ class ChaseGame {
       let circle = Square.new(0, 100, 30);
 
       let direction = 0;
-      let directionSqu = 0; 
-      let directionCir = 0;
 
       let randNum = 0;
 
@@ -39,6 +35,7 @@ class ChaseGame {
       if (direction = 7) { do square.moveLeft(); }
       if (direction = 8) { do square.moveRight(); }
       do Sys.wait(5); 
+
       return;
    }
 
@@ -54,6 +51,12 @@ class ChaseGame {
             let key = Keyboard.keyPressed();
             do moveItems();
          }
+
+         if (randNum = 1) { do circle.moveUp();} 
+        if (randNum = 2) { do circle.moveDown();} 
+        if (randNum = 3) { do circle.moveLeft();}  
+        if (randNum = 4) { do circle.moveRight();}
+
          if (key = 81)  { let exit = true; }     // q key
 
          if (key = 131) { let direction = 5; }   // up arrow
@@ -63,11 +66,6 @@ class ChaseGame {
 
          let randNum = random.randRange(4);
          
-         if (randNum = 1) { do circle.moveUp();}   // W
-         if (randNum = 2) { do circle.moveDown();}   // S
-         if (randNum = 3) { do circle.moveLeft();}   // A
-         if (randNum = 4) { do circle.moveRight();}   // D
-
          while (~(key = 0)) {
             let key = Keyboard.keyPressed();
             do moveItems();
