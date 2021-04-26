@@ -1,5 +1,7 @@
 function Random.setSeed 0
 push argument 0
+pop pointer 0
+push argument 1
 pop static 0
 push constant 0
 return
@@ -24,11 +26,13 @@ label IF_FALSE0
 push static 0
 return
 function Random.randRange 2
+push argument 0
+pop pointer 0
 push constant 1
 pop local 0
 label WHILE_EXP0
 push local 0
-push argument 0
+push argument 1
 lt
 not
 if-goto WHILE_END0
@@ -46,7 +50,7 @@ and
 pop local 1
 label WHILE_EXP1
 push local 1
-push argument 0
+push argument 1
 gt
 not
 if-goto WHILE_END1
