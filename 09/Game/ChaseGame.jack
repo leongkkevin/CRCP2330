@@ -45,14 +45,26 @@ class ChaseGame {
       return;
    }
 
-   method int detection() {
+   method boolean detection() {
        var int sqrCrnX;
        var int sqrCrnY;
+       var int CirCrnX;
+       var int CirCrnY;
 
        let sqrCrnX = square.getX() + 30;
        let sqrCrnY = square.getY() + 30;
+       let CirCrnX = circle.getX() + 30;
+       let CirCrnY = circle.getY() + 30;
+
+        if(sqrCrnX - CirCrnX < 1){
+            if(sqrCrnY - CirCrnY < 1){
+                return true;
+            }
+        }
        
-   }
+       return false;
+    }
+       
 
    method void run() {
       var char key;
@@ -62,18 +74,17 @@ class ChaseGame {
       
       while (~exit) {
 
-          if (square.getX() = circle.getX()){
-              if(square.getY() = circle.getY()){
-                
-                let points = points + 1;
+          if (detection()){
+              let points = points + 1;
 
                   do Output.printString("TAGGED!");
                   do Output.printString("You have ");
                   do Output.print(points);
                   do Output.printString(" points!");
                   do Output.println();
-              }
+
           }
+
 
          while (key = 0) {
             let key = Keyboard.keyPressed();
