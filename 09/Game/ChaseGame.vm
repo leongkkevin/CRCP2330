@@ -198,6 +198,8 @@ label IF_FALSE4
 push this 2
 push constant 3
 call Random.randRange 2
+pop temp 0
+push this 2
 pop this 8
 push local 0
 push constant 87

@@ -68,7 +68,8 @@ class ChaseGame {
          if (key = 130) { let direction = 7; }   // left arrow
          if (key = 132) { let direction = 8; }   // right arrow
          
-         let randNum = random.randRange(3);
+         do random.randRange(3);
+         let randNum = random;
          
          if (key = 87) { let direction = 1; }   // W
          if (key = 83) { let direction = 2; }   // S
