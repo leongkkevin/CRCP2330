@@ -13,7 +13,7 @@ class ChaseGame {
    constructor ChaseGame new() {
        do Output.printString("WELCOME TO THE CHASE GAME! This is you ->");
        do Output.println();
-       do Output.printString("Tag the other box 10 times to win!");
+       do Output.printString("Tag the other box 10 times to win! Press SPACE to tag");
        do Output.println();
 
       let square = Square.new(425, 0, 30);
@@ -58,7 +58,7 @@ class ChaseGame {
         } else {
             let c1 = false;
         }
-        if( (square.getX() + 15) < (circle.getX() + 30) ){
+        if( (square.getX() + 15) < (circle.getX() + 40) ){
             let c2 = true;
         } else {
             let c2 = false;
@@ -78,7 +78,7 @@ class ChaseGame {
         } else {
             let c1 = false;
         }
-        if( (square.getY() + 15) < (circle.getY() + 30) ){
+        if( (square.getY() + 15) < (circle.getY() + 40) ){
             let c2 = true;
         } else {
             let c2 = false;
@@ -91,9 +91,10 @@ class ChaseGame {
    method boolean detection() {
        
        if( (checkX()) & (checkY()) ){
-        return true;
+            return true;
        } else {
-        return false;
+            return false;
+
        }
        
     }
@@ -106,15 +107,20 @@ class ChaseGame {
       let exit = false;
       
       while (~exit) {
-          let key = Keyboard.keyPressed();
-         do moveItems();
 
-          if (detection()){
+
+         while (key = 0) {
+            let key = Keyboard.keyPressed();
+            do moveItems();
+         }
+
+         if(key = 32) { 
+            if (detection()){
               let points = points + 1;
                 do Output.printString("TAGGED!");
-                  do Output.println();
-
-          }
+                do Output.println();
+            }
+         }
 
          if (key = 81)  { let exit = true; }     // q key
 
@@ -124,8 +130,13 @@ class ChaseGame {
          if (key = 132) { let direction = 8; }   // right arrow
 
          let randNum = random.randRange(4);
+         
+         while (~(key = 0)) {
+            let key = Keyboard.keyPressed();
+            do moveItems();
+         }
 
-         if(points = 10){
+         if(points > 10){
             do Output.printString("YOU WIN!");
             let exit = true;
         }
