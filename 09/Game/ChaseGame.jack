@@ -35,6 +35,10 @@ class ChaseGame {
       if (direction = 7) { do square.moveLeft(); }
       if (direction = 8) { do square.moveRight(); }
       do Sys.wait(5); 
+      if (randNum = 1) { do circle.moveUp();} 
+        if (randNum = 2) { do circle.moveDown();} 
+        if (randNum = 3) { do circle.moveLeft();}  
+        if (randNum = 4) { do circle.moveRight();}
 
       return;
    }
@@ -51,11 +55,6 @@ class ChaseGame {
             let key = Keyboard.keyPressed();
             do moveItems();
          }
-
-         if (randNum = 1) { do circle.moveUp();} 
-        if (randNum = 2) { do circle.moveDown();} 
-        if (randNum = 3) { do circle.moveLeft();}  
-        if (randNum = 4) { do circle.moveRight();}
 
          if (key = 81)  { let exit = true; }     // q key
 
