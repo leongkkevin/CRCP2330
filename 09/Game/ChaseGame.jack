@@ -77,10 +77,7 @@ class ChaseGame {
           if (detection()){
               let points = points + 1;
                   do Output.printString("TAGGED!");
-                //   do Output.printString("You have ");
-                //   do Output.print(points);
-                //   do Output.printString(" points!");
-                //   do Output.println();
+                  do Output.println();
 
           }
 
