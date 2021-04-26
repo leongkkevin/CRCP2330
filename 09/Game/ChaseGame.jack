@@ -106,19 +106,15 @@ class ChaseGame {
       let exit = false;
       
       while (~exit) {
+          let key = Keyboard.keyPressed();
+         do moveItems();
 
           if (detection()){
               let points = points + 1;
-                  do Output.printString("TAGGED!");
+                do Output.printString("TAGGED!");
                   do Output.println();
 
           }
-
-
-         while (key = 0) {
-            let key = Keyboard.keyPressed();
-            do moveItems();
-         }
 
          if (key = 81)  { let exit = true; }     // q key
 
@@ -128,11 +124,6 @@ class ChaseGame {
          if (key = 132) { let direction = 8; }   // right arrow
 
          let randNum = random.randRange(4);
-         
-         while (~(key = 0)) {
-            let key = Keyboard.keyPressed();
-            do moveItems();
-         }
 
          if(points = 10){
             do Output.printString("YOU WIN!");
