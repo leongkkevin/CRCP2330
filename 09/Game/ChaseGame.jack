@@ -1,18 +1,20 @@
 
 class ChaseGame {
    field Square square; // the square of this game
-   field Circle circle;
+   field Square circle;
 
    field int directionSqu;
    field int directionCir;
+   field int direction;
 
    field int squarePts;
    field int circlePts;
 
    constructor ChaseGame new() {
       let square = Square.new(0, 0, 30);
-      let circle = Circle.new(50, 50, 30);
+      let circle = Square.new(0, 100, 30);
 
+      let direction = 0;
       let directionSqu = 0; 
       let directionCir = 0;
 
@@ -59,10 +61,10 @@ class ChaseGame {
          if (key = 130) { let direction = 3; }   // left arrow
          if (key = 132) { let direction = 4; }   // right arrow
          
-         if (key = 119) { let direction = 5; }   // W
-         if (key = 115) { let direction = 6; }   // S
-         if (key = 97) { let direction = 7; }   // A
-         if (key = 100) { let direction = 8; }   // D
+         if (key = 87) { let direction = 5; }   // W
+         if (key = 83) { let direction = 6; }   // S
+         if (key = 65) { let direction = 7; }   // A
+         if (key = 68) { let direction = 8; }   // D
 
          while (~(key = 0)) {
             let key = Keyboard.keyPressed();

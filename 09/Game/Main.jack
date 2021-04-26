@@ -2,7 +2,7 @@
 class Main {
     function void main() {
         var ChaseGame game;
-        let game = SquareGame.new();
+        let game = ChaseGame.new();
         do game.run();
         do game.dispose();
         return;
