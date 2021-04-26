@@ -6,6 +6,8 @@ class ChaseGame {
 
    field int direction;
 
+    field int it;
+
    field int squarePts;
    field int circlePts;
 
@@ -18,6 +20,8 @@ class ChaseGame {
       let direction = 0;
 
       let randNum = 0;
+
+      let it = 1;
 
       return this;
    }
@@ -50,6 +54,12 @@ class ChaseGame {
       let exit = false;
       
       while (~exit) {
+
+          if (square.getX() = circle.getY()){
+              if(square.getY() = circle.getY()){
+                  do Output.printString("Hello world!");
+              }
+          }
 
          while (key = 0) {
             let key = Keyboard.keyPressed();
