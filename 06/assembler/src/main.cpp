@@ -11,12 +11,21 @@ using namespace std;
 string aInstruction(int integer){
     string binStr;
 
+    while(integer > 0){
+        string binPart;
+        int intBinPart = (integer % 2) + 48;
+        binStr.append(to_string(intBinPart));
+
+        integer /= 2;
+    }
+    binStr.append("/0");
+
 }
 
 string parse(string line){
     string binary;
 
-    if(line[0] == '/' || line.length() == 2){
+    if(line[0] == '/' || line.length() <= 2){
         return "";
     }
     //A instruction
