@@ -3,15 +3,25 @@
 //
 #include <iostream>
 #include <string>
-#include <fstream>;
+#include <fstream>
+#include "stdlib.h"
 
 using namespace std;
+
+string aInstruction(int integer){
+    string binStr;
+
+}
 
 string parse(string line){
     string binary;
 
     if(line[0] == '/' || line.length() == 2){
         return "";
+    }
+    //A instruction
+    if (line[0] == '@') {
+        binary = aInstruction((int)line[1]);
     }
 }
 
