@@ -24,6 +24,7 @@ string aInstruction(int integer){
     }
 
     reverse(binStr.begin(), binStr.end());
+    
     return binStr;
 
 }
@@ -36,8 +37,7 @@ string parse(string line){
     }
     //A instruction
     if (line[0] == '@') {
-        int t = (int)line[1];
-        binary = aInstruction((int)line[1]);
+        binary = aInstruction((int)line[1] - 48);
     }
 
     return binary;
@@ -55,7 +55,6 @@ int main(int argc, char** argv){
     string fileLine;
     while(getline(input, fileLine)){
         string binaryLine = parse(fileLine);
-
     }
 
 
