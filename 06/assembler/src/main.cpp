@@ -3,8 +3,13 @@
 //
 #include <iostream>
 #include <string>
+#include <fstream>;
 
 using namespace std;
+
+string parse(string line){
+    
+}
 
 int main(int argc, char** argv){
 
@@ -13,7 +18,13 @@ int main(int argc, char** argv){
     int nameP2 = inFileName.length() - nameP1 - 4;
     string outFileName = inFileName.substr(nameP1, nameP2);
 
-    
+    ifstream input;
+    input.open(argv[1]);
+    string fileLine;
+    while(getline(input, fileLine)){
+        string binaryLine = parse(fileLine);
+
+    }
 
 
     return 0;
