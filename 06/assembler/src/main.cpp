@@ -19,12 +19,13 @@ string aInstruction(int integer){
         integer /= 2;
     }
 
-    while(binStr.length() < 15){
+    while(binStr.length() < 16){
         binStr.append("0");
     }
 
     reverse(binStr.begin(), binStr.end());
-    
+
+    cout << binStr << endl;
     return binStr;
 
 }
@@ -37,7 +38,17 @@ string parse(string line){
     }
     //A instruction
     if (line[0] == '@') {
-        binary = aInstruction((int)line[1] - 48);
+        int i = 1;
+        string passStr;
+        while(isnumber(line[i])){
+            passStr += line[i];
+            ++i;
+        }
+        if(passStr.length() == 0){
+            binary = "0000000000000000";
+        } else{
+            binary = aInstruction(stoi(passStr));
+        }
     }
 
     return binary;
