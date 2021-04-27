@@ -13,12 +13,18 @@ string aInstruction(int integer){
 
     while(integer > 0){
         string binPart;
-        int intBinPart = (integer % 2) + 48;
+        int intBinPart = (integer % 2);
         binStr.append(to_string(intBinPart));
 
         integer /= 2;
     }
-    binStr.append("/0");
+
+    while(binStr.length() < 15){
+        binStr.append("0");
+    }
+
+    reverse(binStr.begin(), binStr.end());
+    return binStr;
 
 }
 
@@ -30,8 +36,11 @@ string parse(string line){
     }
     //A instruction
     if (line[0] == '@') {
+        int t = (int)line[1];
         binary = aInstruction((int)line[1]);
     }
+
+    return binary;
 }
 
 int main(int argc, char** argv){
