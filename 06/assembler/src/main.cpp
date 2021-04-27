@@ -8,7 +8,11 @@
 using namespace std;
 
 string parse(string line){
-    
+    string binary;
+
+    if(line[0] == '/' || line.length() == 2){
+        return "";
+    }
 }
 
 int main(int argc, char** argv){
