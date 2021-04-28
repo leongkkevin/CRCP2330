@@ -32,6 +32,9 @@ string cInstruction(string line, map<string, string> &comp, map<string, string> 
         binStr += dest[preCheck];
         binStr += "000";
     } else if(checkType == ';'){
+        binStr += comp[preCheck];
+        binStr += "000";
+        binStr += jump[postCheck];
     }
 
     return binStr;
