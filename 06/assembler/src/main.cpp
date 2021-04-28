@@ -11,7 +11,7 @@ using namespace std;
 
 string cInstruction(string line, map<string, string> &comp, map<string, string> &dest, map<string, string> &jump){
     string binStr = "111";
-    
+
     string preCheck;
     int mid;
     char checkType;
@@ -65,7 +65,7 @@ string aInstruction(int integer){
 string parse(string line, map<string, string> &comp, map<string, string> &dest, map<string, string> &jump, map<string, int> &standard){
     string binary;
 
-    if(line[0] == '/' || line.length() <= 2){
+    if(line[0] == '/' || line.length() <= 2 || line[0] == '('){
         return "";
     }
 
@@ -184,7 +184,7 @@ int main(int argc, char** argv){
     ifstream input;
     input.open(argv[1]);
 
-
+    
 
     string fileLine;
     while(getline(input, fileLine)){
