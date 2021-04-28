@@ -9,6 +9,35 @@
 
 using namespace std;
 
+string cInstruction(string line, map<string, string> &comp, map<string, string> &dest, map<string, string> &jump){
+    string binStr = "111";
+
+    string preCheck;
+    int mid;
+    char checkType;
+    for(int i = 0; i < line.length(); ++i){
+        if(!isalpha(line[i])){
+            checkType = line[i];
+            mid = i;
+            break;
+        } else {
+            preCheck += line[i];
+        }
+    }
+
+    string postCheck = line.substr(mid + 1, line.find_last_of('\\'));
+
+    if(checkType == '='){
+        binStr += comp[postCheck];
+        binStr += dest[preCheck];
+        binStr += "000";
+    } else if(checkType == ';'){
+
+    }
+
+    return binStr;
+
+}
 
 string aInstruction(int integer){
     string binStr;
