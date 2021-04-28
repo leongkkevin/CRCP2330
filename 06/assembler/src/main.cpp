@@ -93,6 +93,62 @@ string parse(string line, map<string, string> &comp, map<string, string> &dest, 
     return binary;
 }
 
+void makeMaps(map<string, string> &comp, map<string, string> &dest, map<string, string> &jump,
+              map<string, int> &standard){
+    comp["0"] = "0101010";
+    comp["-1"] = "0111010";
+    comp["D"] = "0001100";
+    comp["A"] = "0110000";
+    comp["!D"] = "0001101";
+    comp["!A"] = "0110001";
+    comp["-D"] = "0001111";
+    comp["-A"] = "0110011";
+    comp["D+1"] = "0011111";
+    comp["A+!"] = "0110111";
+    comp["D-1"] = "0001110";
+    comp["A-1"] = "0110010";
+    comp["D+A"] = "0000010";
+    comp["D-A"] = "0010011";
+    comp["A-D"] = "0000111";
+    comp["D&A"] = "0000000";
+    comp["D|A"] = "0010101";
+    comp["M"] = "1110000";
+    comp["!M"] = "1110001";
+    comp["-M"] = "1110011";
+    comp["M+1"] = "1110111";
+    comp["M-1"] = "1110010";
+    comp["D+M"] = "1000010";
+    comp["D-M"] = "1010011";
+    comp["M-D"] = "1000111";
+    comp["D&M"] = "1000000";
+    comp["D|M"] = "1010101";
+
+    dest["null"] = "000";
+    dest["M"] = "001";
+    dest["D"] = "010";
+    dest["A"] = "100";
+    dest["MD"] = "011";
+    dest["AM"] = "101";
+    dest["AD"] = "110";
+    dest["AMD"] = "111";
+
+    jump["null"] = "000";
+    jump["JGT"] = "001";
+    jump["JEQ"] = "010";
+    jump["JGE"] = "011";
+    jump["JLT"] = "100";
+    jump["JNE"] = "101";
+    jump["JLE"] = "110";
+    jump["JMP"] = "111";
+
+    standard["SP"] = 0;
+    standard["LCL"] = 1;
+    standard["ARG"] = 2;
+    standard["THIS"] = 3;
+    standard["THAT"] = 4;
+    standard["SCREEN"] = 16384;
+    standard["KBD"] = 24576;
+}
 
 int main(int argc, char** argv){
 
