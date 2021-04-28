@@ -76,27 +76,27 @@ include CMakeFiles/06.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/06.dir/flags.make
 
-CMakeFiles/06.dir/src/main.cpp.o: CMakeFiles/06.dir/flags.make
-CMakeFiles/06.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/06.dir/src/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/06.dir/src/main.cpp.o -c /Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/src/main.cpp
+CMakeFiles/06.dir/main.cpp.o: CMakeFiles/06.dir/flags.make
+CMakeFiles/06.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/06.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/06.dir/main.cpp.o -c /Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/main.cpp
 
-CMakeFiles/06.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/06.dir/src/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/src/main.cpp > CMakeFiles/06.dir/src/main.cpp.i
+CMakeFiles/06.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/06.dir/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/main.cpp > CMakeFiles/06.dir/main.cpp.i
 
-CMakeFiles/06.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/06.dir/src/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/src/main.cpp -o CMakeFiles/06.dir/src/main.cpp.s
+CMakeFiles/06.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/06.dir/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/main.cpp -o CMakeFiles/06.dir/main.cpp.s
 
 # Object files for target 06
 06_OBJECTS = \
-"CMakeFiles/06.dir/src/main.cpp.o"
+"CMakeFiles/06.dir/main.cpp.o"
 
 # External object files for target 06
 06_EXTERNAL_OBJECTS =
 
-06: CMakeFiles/06.dir/src/main.cpp.o
+06: CMakeFiles/06.dir/main.cpp.o
 06: CMakeFiles/06.dir/build.make
 06: CMakeFiles/06.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 06"

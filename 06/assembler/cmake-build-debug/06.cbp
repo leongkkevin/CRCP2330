@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/src/main.cpp">
+		<Unit filename="/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/main.cpp">
 			<Option target="06"/>
 		</Unit>
 		<Unit filename="/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/CMakeLists.txt">

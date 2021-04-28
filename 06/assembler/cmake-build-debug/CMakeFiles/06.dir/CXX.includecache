@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/src/main.cpp
+/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/main.cpp
 iostream
 -
 string
@@ -16,5 +16,5 @@ fstream
 map
 -
 stdlib.h
-/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/src/stdlib.h
+/Users/kevinleong/Documents/GitHub/CRCP2330/06/assembler/stdlib.h
 
