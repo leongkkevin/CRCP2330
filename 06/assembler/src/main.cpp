@@ -11,12 +11,12 @@ using namespace std;
 
 string cInstruction(string line, map<string, string> &comp, map<string, string> &dest, map<string, string> &jump){
     string binStr = "111";
-
+    
     string preCheck;
     int mid;
     char checkType;
     for(int i = 0; i < line.length(); ++i){
-        if(!isalpha(line[i])){
+        if(!isalpha(line[i]) && !isnumber(line[i])){
             checkType = line[i];
             mid = i;
             break;
@@ -183,6 +183,9 @@ int main(int argc, char** argv){
 
     ifstream input;
     input.open(argv[1]);
+
+
+
     string fileLine;
     while(getline(input, fileLine)){
         string binaryLine = parse(fileLine, comp, dest, jump, standard);
