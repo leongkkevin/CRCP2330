@@ -175,6 +175,12 @@ int main(int argc, char** argv){
 
     makeMaps(comp, dest, jump, standard);
 
+    ifstream fin(argv[argc-1]);
+    string file = argv[argc-1];
+    int dotLocation = file.find(".",0);
+    string hackFile = file.substr(0,dotLocation)+".hack";
+    ofstream fout(hackFile.c_str());
+
     string fileLine;
     while(getline(fin, fileLine)){
         string binaryLine = parse(fileLine, comp, dest, jump, standard);
