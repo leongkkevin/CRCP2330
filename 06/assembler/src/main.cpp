@@ -179,16 +179,20 @@ int main(int argc, char** argv){
     string inFileName = argv[1];
     int nameP1 = inFileName.find_last_of('/') + 1;
     int nameP2 = inFileName.length() - nameP1 - 4;
-    string outFileName = inFileName.substr(nameP1, nameP2);
+    string outFileName = inFileName.substr(nameP1, nameP2) + ".hack";
 
     ifstream input;
     input.open(argv[1]);
 
-    
+    ofstream output;
+    output.open(outFileName);
 
     string fileLine;
     while(getline(input, fileLine)){
         string binaryLine = parse(fileLine, comp, dest, jump, standard);
+        if(binaryLine.length() > 0){
+            output << binaryLine << endl;
+        }
     }
 
 
