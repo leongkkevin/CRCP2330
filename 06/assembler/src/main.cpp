@@ -32,7 +32,6 @@ string cInstruction(string line, map<string, string> &comp, map<string, string> 
         binStr += dest[preCheck];
         binStr += "000";
     } else if(checkType == ';'){
-
     }
 
     return binStr;
@@ -69,7 +68,22 @@ string parse(string line, map<string, string> &comp, map<string, string> &dest, 
 
     //Normalize lines
     line = line.substr(0, line.length() - 1);
+    if(line[0] == ' '){
+        int i = 0;
+        while(line[i] == ' '){
+            ++i;
+        }
 
+        line = line.substr(i, line.length());
+    }
+    int commCheck;
+    for(int i = 0; i < line.length(); ++i){
+        if(line[i] == ' '){
+            commCheck = i;
+           break;
+        }
+    }
+    line = line.substr(0, commCheck);
 
     //A instruction
     if (line[0] == '@') {
