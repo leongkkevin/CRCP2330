@@ -62,7 +62,8 @@ string aInstruction(int integer){
 
 }
 
-string parse(string line, map<string, string> &comp, map<string, string> &dest, map<string, string> &jump, map<string, int> &standard){
+string parse(string line, map<string, string> &comp, map<string, string> &dest, map<string, string> &jump, map<string, int> &standard,
+             int &currMem){
     string binary;
 
     if(line[0] == '/' || line.length() <= 2 || line[0] == '('){
@@ -79,7 +80,7 @@ string parse(string line, map<string, string> &comp, map<string, string> &dest, 
 
         line = line.substr(i, line.length());
     }
-    int commCheck;
+    int commCheck = line.length();
     for(int i = 0; i < line.length(); ++i){
         if(line[i] == ' '){
             commCheck = i;
@@ -98,7 +99,12 @@ string parse(string line, map<string, string> &comp, map<string, string> &dest, 
         }
         if(passStr.length() == 0){
             string checkMap = line.substr(1, line.length() - 1);
-            binary = aInstruction(standard[checkMap]);
+            if(standard.count(checkMap) == 0){
+                binary = aInstruction(currMem);
+                currMem += 2;
+            } else {
+                binary = aInstruction(standard[checkMap]);
+            }
         } else{
             binary = aInstruction(stoi(passStr));
         }
@@ -182,8 +188,9 @@ int main(int argc, char** argv){
     ofstream fout(hackFile.c_str());
 
     string fileLine;
+    int currMem = 10;
     while(getline(fin, fileLine)){
-        string binaryLine = parse(fileLine, comp, dest, jump, standard);
+        string binaryLine = parse(fileLine, comp, dest, jump, standard, currMem);
         if(binaryLine.length() > 0){
             fout << binaryLine << endl;
         }
